@@ -2,3 +2,8 @@ packages:
   - 'understand-anything-plugin/packages/*'
   - 'understand-anything-plugin'
   - 'homepage'
+
+# Supply-chain hardening: only direct deps declared in a root package.json
+# may use exotic sources (git repos / tarball URLs). Blocks the registry-bypass
+# vector (cf. the TanStack npm attack). Mirrors the global ~/.config/pnpm/rc setting.
+blockExoticSubdeps: true
